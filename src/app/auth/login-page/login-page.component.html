@@ -1,1 +1,20 @@
+<div class="login">
+    <h1 class="login__title">Войдите</h1>
+    <form  class="login__form">
+        <div class="login__form-email">
+            <mat-form-field>
+                <mat-label>Введите ваш email</mat-label>
+                <input matInput placeholder="ivanov@mail.ru" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">error</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="login__form-password">
+            <mat-form-field hintLabel="Max 10 characters">
+                <mat-label>Enter some input</mat-label>
+                <input matInput #input maxlength="10" placeholder="Ex. Nougat">
+                <mat-hint align="end">{{input.value.length}}/10</mat-hint>
+              </mat-form-field>
+        </div>
 
+    </form>
+</div>

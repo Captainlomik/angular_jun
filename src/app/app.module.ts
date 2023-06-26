@@ -10,6 +10,8 @@ import { RegistrationPageComponent } from './auth/registration-page/registration
 import { PostPageComponent } from './post-page/post-page.component';
 import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.component';
 import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
+import { MaterialModule } from './shared/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,12 +23,16 @@ import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.co
     LoginPageComponent,
     PostPageComponent,
     AuthLayoutComponent,
-    SiteLayoutComponent
+    SiteLayoutComponent,
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,20 @@
 <div class="login">
     <h1 class="login__title">Войдите</h1>
     <form class="login__form" [formGroup]="loginForm" (ngSubmit)="login()">
-        <div class="loginForm">
-            <mat-form-field class="example-full-width">
-                <mat-label>Email</mat-label>
-                <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
-                <mat-hint>Errors appear instantly!</mat-hint>
+        <div class="login__form-inputs">
+            <mat-form-field class="input__wrap">
+                <mat-label class="input__label">Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="ivanov@mail.ru">
+                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
             </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Пароль</mat-label>
-                <input type="email" matInput formControlName="password">
+            <mat-form-field class="input__wrap">
+                <mat-label class="input__label">Пароль</mat-label>
+                <input type="password" matInput formControlName="password">
             </mat-form-field>
         </div>
-        <button type="submit" mat-button color="primary">Войти</button>
+        <button class="login__submit" mat-raised-button color="primary">Войти</button>
+        <div class="login__reg">
+            <a [routerLink]="['/register']">Зарегистрироваться</a>
+        </div>
     </form>
 </div>

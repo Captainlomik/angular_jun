@@ -6,6 +6,9 @@
     display: none;
 }
 
+header{
+    max-height: 80px;
+}
 .auth {
     &__header {
 
@@ -25,3 +28,6 @@
     }
 }
 
+.auth{
+    height: calc(100vh - 80px );
+}

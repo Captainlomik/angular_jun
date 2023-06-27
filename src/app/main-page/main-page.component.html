@@ -1,1 +1,8 @@
-<p>main-page works!</p>
+<div class="posts">
+  <h1 class="posts__title">Новости</h1>
+  <div class="posts__items-wrap">
+    <div class="posts__items" *ngFor="let post of posts">
+      <app-post-bock class="posts__items-item" [post]="post"></app-post-bock>
+    </div>
+  </div>
+</div>

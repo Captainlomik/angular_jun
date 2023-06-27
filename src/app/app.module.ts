@@ -14,6 +14,7 @@ import { MaterialModule } from './shared/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PostBockComponent } from './post-bock/post-bock.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     AuthLayoutComponent,
     SiteLayoutComponent,
     PostBockComponent,
+    NotFoundComponent,
 
 
   ],

@@ -1,1 +1,9 @@
-<p>site-layout works!</p>
+<header class="auth__header">
+    <mat-toolbar>
+        <button class="header__btn"  mat-button *ngIf="login" (click)="logOut()">Выйти</button>
+    </mat-toolbar>
+</header>
+
+<div class="pages">
+    <router-outlet></router-outlet>
+</div>

@@ -12,6 +12,8 @@ import { AuthLayoutComponent } from './shared/layouts/auth-layout/auth-layout.co
 import { SiteLayoutComponent } from './shared/layouts/site-layout/site-layout.component';
 import { MaterialModule } from './shared/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PostBockComponent } from './post-bock/post-bock.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     PostPageComponent,
     AuthLayoutComponent,
     SiteLayoutComponent,
+    PostBockComponent,
 
 
   ],
@@ -32,7 +35,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NoopAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

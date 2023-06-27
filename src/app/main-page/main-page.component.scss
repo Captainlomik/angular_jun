@@ -1,0 +1,21 @@
+.posts {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__items {
+        width: 45%;
+
+        &-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+
+    &__items:last-child {
+        margin: 0;
+    }
+}

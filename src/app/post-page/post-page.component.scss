@@ -1,0 +1,13 @@
+.post {
+    height: 100%;
+    max-width: 960px;
+    margin: 50px 0;
+
+    &__exit::before {
+        content: '←';
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+
+    }
+}

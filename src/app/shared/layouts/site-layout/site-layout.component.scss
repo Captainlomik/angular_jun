@@ -1,9 +1,16 @@
-.pages{
+.pages {
     margin: 0 150px;
-    height: calc(100vh - 80px );
+    height: calc(100vh - 80px);
 }
 
-.header__btn{
+.header__btn {
     margin-right: 0;
     margin-left: auto;
+}
+
+
+@media(max-width:720px) {
+    .pages {
+        margin: 0 20px;
+    }
 }

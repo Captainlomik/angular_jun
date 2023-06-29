@@ -10,19 +10,24 @@ export class AuthService {
 
   auth: boolean = false
   user: User
-  userString: string | null = localStorage.getItem('user')
+  userString: string | null
 
   login(email: string, password: string) {
-    if (this.userString) {
-      this.user = JSON.parse(this.userString)
-      if (this.user.email === email && this.user.password === password) {
-        this.auth = true
-      }
+    this.userString = localStorage.getItem('user')
+
+    if (!this.userString) throw new Error('Пользователь отсуствует')
+
+    this.user = JSON.parse(this.userString)
+    if (this.user.email !== email || this.user.password !== password) {
+      throw new Error('Email или пароль неверные. Попробуйте еще раз.')
     }
-    localStorage.setItem('auth', 'true')
+
+    this.auth = true
+    localStorage.setItem('auth', this.auth.toString())
+    return this.auth
   }
 
-  logout(){
+  logout() {
     this.auth = false
     localStorage.setItem('auth', 'false')
   }

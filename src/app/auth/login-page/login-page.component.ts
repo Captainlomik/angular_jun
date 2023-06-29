@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { AlertService } from 'src/app/shared/services/alert.service';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -15,7 +14,7 @@ export class LoginPageComponent implements OnInit {
   errorMessage: Error
 
 
-  constructor(private authService: AuthService, private router: Router, private alert: AlertService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
 
   ngOnInit() {

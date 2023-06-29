@@ -1,17 +1,19 @@
 import { inject } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from './auth.service';
-import { of } from 'rxjs';
 
 export const userGuard: CanActivateFn = (
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
 ) => {
     const authService = inject(AuthService)
-    if (authService.auth) {
-        return of(true)
+    const router = inject(Router)
+
+    if (authService.isLogin()) {
+        return true
     }
     else {
-        return of(false)
+        router.navigate(['/login'])
+        return false
     }
 }

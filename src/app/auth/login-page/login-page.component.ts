@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AlertService } from 'src/app/shared/services/alert.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -10,7 +11,12 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
-  constructor(private authService: AuthService, private router: Router, private route: ActivatedRoute) { }
+  auth: boolean 
+  errorMessage: Error
+
+
+  constructor(private authService: AuthService, private router: Router, private alert: AlertService) { }
+
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -20,8 +26,13 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
-    this.loginForm.enable
-    this.router.navigate(['posts'])
+    try {
+      this.auth = this.authService.login(this.loginForm.value.email, this.loginForm.value.password)
+      this.loginForm.enable
+      this.router.navigate(['posts'])
+    }
+    catch (e: any) {
+      this.errorMessage = e.message
+    }
   }
 }

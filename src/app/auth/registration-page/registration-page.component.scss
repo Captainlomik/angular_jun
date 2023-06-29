@@ -7,19 +7,28 @@
 
     &__form {
         width: 60%;
+
         &-inputs {
             display: flex;
             flex-direction: column;
         }
     }
 
-    &__submit{
+    &__submit {
         width: 100%;
     }
 
-    &__login{
+    &__login {
         margin-top: 20px;
         text-align: center;
     }
 
+}
+
+@media(max-width:720px) {
+    .reg {
+        &__form {
+            width: 100%;
+        }
+    }
 }

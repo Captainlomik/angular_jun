@@ -5,14 +5,18 @@
             <mat-form-field class="input__wrap">
                 <mat-label class="input__label">Email</mat-label>
                 <input type="email" matInput formControlName="email" placeholder="ivanov@mail.ru">
-                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-hint *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched">
+                    Проверьте корректность введенных данных
+                </mat-hint>
             </mat-form-field>
             <mat-form-field class="input__wrap">
                 <mat-label class="input__label">Пароль</mat-label>
                 <input type="password" matInput formControlName="password">
+                <mat-hint *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched">Проверьте корректность ввода (минимальная длина пароля- 6)</mat-hint>
             </mat-form-field>
         </div>
-        <button class="login__submit" mat-raised-button color="primary">Войти</button>
+        <p *ngIf="errorMessage">{{errorMessage}}</p>
+        <button class="login__submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Войти</button>
         <div class="login__reg">
             <a [routerLink]="['/register']">Зарегистрироваться</a>
         </div>

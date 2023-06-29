@@ -17,7 +17,7 @@ export class RegistrationPageComponent implements OnInit {
 
   ngOnInit() {
     this.regForm = new FormGroup({
-      name: new FormControl('', Validators.required),
+      name: new FormControl(''),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
@@ -29,5 +29,7 @@ export class RegistrationPageComponent implements OnInit {
     this.regForm.enable
     this.route.navigate(['login'])
   }
+
+
 }
 

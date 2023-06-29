@@ -5,25 +5,25 @@
             <mat-form-field class="input__wrap">
                 <mat-label class="input__label">Имя</mat-label>
                 <input type="text" matInput formControlName="name" placeholder="Иван">
-                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
             </mat-form-field>
             <mat-form-field lass="input__wrap">
                 <mat-label class="input__label">Email</mat-label>
                 <input type="email" matInput formControlName="email" placeholder="ivanov@mail.ru">
-                <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+                <mat-hint *ngIf="regForm.controls['email'].invalid && regForm.controls['email'].touched">
+                    Проверьте корректность введенных данных
+                </mat-hint>
             </mat-form-field>
             <mat-form-field lass="input__wrap">
                 <mat-label class="input__label">Пароль</mat-label>
                 <input type="password" matInput formControlName="password">
+                <mat-hint *ngIf="regForm.controls['password'].invalid && regForm.controls['password'].touched">Проверьте корректность ввода (минимальная длина пароля- 6)</mat-hint>
             </mat-form-field>
-            <!-- <mat-form-field lass="input__wrap">
-                <mat-label class="input__label">Повторите пароль</mat-label>
-                <input type="password" matInput formControlName="password">
-            </mat-form-field> -->
         </div>
-        <button class="reg__submit" mat-raised-button color="primary">Зарегистрироваться</button>
+        <button class="reg__submit" mat-raised-button color="primary"
+            [disabled]="regForm.invalid">Зарегистрироваться</button>
         <div class="reg__login">
             <a [routerLink]="['/login']">Войти</a>
         </div>
     </form>
 </div>
+
